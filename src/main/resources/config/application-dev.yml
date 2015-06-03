@@ -6,11 +6,11 @@ spring:
         active: dev
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: 
+        url: jdbc:postgresql://localhost:5432/TestProject
         databaseName: TestProject
-        serverName: localhost
         username: TestProject
-        password: 
+        password: TestProject
+        driver-class-name: org.postgresql.Driver
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect
@@ -19,7 +19,7 @@ spring:
         show_sql: true
         generate-ddl: false
         hibernate:
-            ddl-auto: none
+            ddl-auto: update
             naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
         properties:
             hibernate.cache.use_second_level_cache: true
