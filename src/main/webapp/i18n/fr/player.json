@@ -1,0 +1,20 @@
+{
+    "testprojectApp": {
+        "player" : {
+            "home": {
+                "title": "Players",
+                "createLabel": "Créer un nouveau Player",
+                "createOrEditLabel": "Créer ou éditer un Player"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Player {{ id }} ?"
+            },
+            "detail": {
+                "title": "Player"
+            },
+            "identifier": "Identifier",
+            "name": "Name"
+        }
+    }
+}
+
