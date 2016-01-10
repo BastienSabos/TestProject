@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('testprojectApp')
-    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal) {
+angular.module('testProjectApp')
+    .controller('NavbarController', function ($scope, $location, $state, Auth, Principal, ENV) {
         $scope.isAuthenticated = Principal.isAuthenticated;
-        $scope.isInRole = Principal.isInRole;
         $scope.$state = $state;
+        $scope.inProduction = ENV === 'prod';
 
         $scope.logout = function () {
             Auth.logout();

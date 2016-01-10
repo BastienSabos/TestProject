@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('error', {
                 parent: 'site',
                 url: '/error',
                 data: {
-                    roles: [],
-                    pageTitle: 'errors.title'
+                    authorities: [],
+                    pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
@@ -26,7 +26,7 @@ angular.module('testprojectApp')
                 parent: 'site',
                 url: '/accessdenied',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {

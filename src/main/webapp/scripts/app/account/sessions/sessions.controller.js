@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .controller('SessionsController', function ($scope, Sessions, Principal) {
         Principal.identity().then(function(account) {
             $scope.account = account;

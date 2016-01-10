@@ -1,6 +1,7 @@
 package com.bastien.sabos.testapp.repository;
 
 import com.bastien.sabos.testapp.domain.Authority;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

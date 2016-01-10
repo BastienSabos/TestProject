@@ -2,7 +2,7 @@ package com.bastien.sabos.testapp.repository;
 
 import com.bastien.sabos.testapp.domain.PersistentToken;
 import com.bastien.sabos.testapp.domain.User;
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

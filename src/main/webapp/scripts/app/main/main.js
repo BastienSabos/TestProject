@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('home', {
                 parent: 'site',
                 url: '/',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {

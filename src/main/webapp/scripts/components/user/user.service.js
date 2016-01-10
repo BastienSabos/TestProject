@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .factory('User', function ($resource) {
         return $resource('api/users/:login', {}, {
                 'query': {method: 'GET', isArray: true},
@@ -10,6 +10,9 @@ angular.module('testprojectApp')
                         data = angular.fromJson(data);
                         return data;
                     }
-                }
+                },
+                'save': { method:'POST' },
+                'update': { method:'PUT' },
+                'delete':{ method:'DELETE'}
             });
         });

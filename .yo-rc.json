@@ -14,6 +14,13 @@
     "buildTool": "maven",
     "frontendBuilder": "gulp",
     "javaVersion": "8",
-    "rememberMeKey": "d1001803e1642d0aa48c46d89297bc4aedb2abff"
+    "rememberMeKey": "dc8773df1cf881d15579d64ad37b37a2a7526b75",
+    "searchEngine": "no",
+    "useSass": true,
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "testFrameworks": [
+      "gatling"
+    ]
   }
 }

@@ -5,8 +5,8 @@ import com.bastien.sabos.testapp.domain.PersistentToken;
 import com.bastien.sabos.testapp.domain.User;
 import com.bastien.sabos.testapp.repository.PersistentTokenRepository;
 import com.bastien.sabos.testapp.repository.UserRepository;
+
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.IntegrationTest;
@@ -16,6 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.inject.Inject;
+
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.Optional;
 import java.util.List;
 
@@ -46,8 +49,8 @@ public class UserServiceTest {
     public void testRemoveOldPersistentTokens() {
         User admin = userRepository.findOneByLogin("admin").get();
         int existingCount = persistentTokenRepository.findByUser(admin).size();
-        generateUserToken(admin, "1111-1111", new LocalDate());
-        LocalDate now = new LocalDate();
+        generateUserToken(admin, "1111-1111", LocalDate.now());
+        LocalDate now = LocalDate.now();
         generateUserToken(admin, "2222-2222", now.minusDays(32));
         assertThat(persistentTokenRepository.findByUser(admin)).hasSize(existingCount + 2);
         userService.removeOldPersistentTokens();
@@ -57,7 +60,7 @@ public class UserServiceTest {
     @Test
     public void testFindNotActivatedUsersByCreationDateBefore() {
         userService.removeNotActivatedUsers();
-        DateTime now = new DateTime();
+        ZonedDateTime now = ZonedDateTime.now();
         List<User> users = userRepository.findAllByActivatedIsFalseAndCreatedDateBefore(now.minusDays(3));
         assertThat(users).isEmpty();
     }

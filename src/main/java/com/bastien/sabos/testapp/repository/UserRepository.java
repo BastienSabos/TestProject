@@ -2,9 +2,8 @@ package com.bastien.sabos.testapp.repository;
 
 import com.bastien.sabos.testapp.domain.User;
 
-import org.joda.time.DateTime;
+import java.time.ZonedDateTime;
 import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.Optional;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -17,12 +16,17 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findOneByActivationKey(String activationKey);
 
-    List<User> findAllByActivatedIsFalseAndCreatedDateBefore(DateTime dateTime);
+    List<User> findAllByActivatedIsFalseAndCreatedDateBefore(ZonedDateTime dateTime);
+
+    Optional<User> findOneByResetKey(String resetKey);
 
     Optional<User> findOneByEmail(String email);
 
     Optional<User> findOneByLogin(String login);
 
+    Optional<User> findOneById(Long userId);
+
+    @Override
     void delete(User t);
 
 }

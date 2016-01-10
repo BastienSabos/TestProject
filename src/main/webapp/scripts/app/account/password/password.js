@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('password', {
                 parent: 'account',
                 url: '/password',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'global.menu.account.password'
                 },
                 views: {

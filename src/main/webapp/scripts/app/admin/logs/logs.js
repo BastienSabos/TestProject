@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('testprojectApp')
+angular.module('testProjectApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('logs', {
                 parent: 'admin',
                 url: '/logs',
                 data: {
-                    roles: ['ROLE_ADMIN'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'logs.title'
                 },
                 views: {
